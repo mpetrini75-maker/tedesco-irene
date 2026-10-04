@@ -1,0 +1,14 @@
+{
+  "name": "Tedesco di Irene",
+  "short_name": "Tedesco",
+  "description": "Impara il tedesco un mattoncino alla volta",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FAF6EE",
+  "theme_color": "#FAF6EE",
+  "lang": "it",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

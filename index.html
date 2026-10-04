@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tedesco di Irene — Percorso</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#FAF6EE">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Tedesco di Irene">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crema:#FAF6EE; --inchiostro:#2B2B2B;
+    --accent:#A8402E; --accent-scuro:#7A2A1D;
+    --ombra:rgba(43,43,43,0.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Lexend',sans-serif;background:var(--crema);color:var(--inchiostro);
+    line-height:1.7;letter-spacing:0.01em;padding:24px 16px 60px;min-height:100vh;}
+  .wrap{max-width:640px;margin:0 auto;}
+  header{text-align:center;margin:20px 0 40px;}
+  .occhiello{font-size:0.95rem;font-weight:600;color:var(--accent-scuro);
+    text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px;}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:2.6rem;line-height:1.15;margin-bottom:14px;color:var(--accent);}
+  .sub{font-size:1.1rem;color:#5a5a5a;max-width:460px;margin:0 auto;}
+  .step{display:flex;align-items:stretch;gap:16px;text-decoration:none;color:inherit;
+    background:#fff;border-radius:18px;padding:18px 20px;margin-bottom:16px;
+    box-shadow:0 4px 14px var(--ombra);border:2px solid transparent;
+    transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;}
+  .step:hover{transform:translateY(-3px);box-shadow:0 10px 24px var(--ombra);border-color:var(--accent);}
+  .num{flex-shrink:0;width:54px;height:54px;border-radius:14px;display:flex;align-items:center;
+    justify-content:center;font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:#fff;}
+  .c1{background:var(--accent);}
+  .info{flex:1;min-width:0;}
+  .info h2{font-size:1.2rem;font-weight:600;margin-bottom:2px;}
+  .info p{font-size:0.98rem;color:#666;}
+  .badge{flex-shrink:0;align-self:center;font-size:0.82rem;font-weight:600;
+    padding:6px 12px;border-radius:99px;white-space:nowrap;background:#F6E3DC;color:var(--accent-scuro);}
+  .nota{background:#fff;border-radius:16px;padding:14px 18px;margin:0 0 22px;box-shadow:0 4px 14px var(--ombra);font-size:0.98rem;color:#555;}
+  footer{text-align:center;margin-top:36px;font-size:0.92rem;color:#9a9a9a;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="occhiello">Il tedesco, un mattoncino alla volta</div>
+    <h1>Il percorso di Tedesco</h1>
+    <p class="sub">Dal libro <i>Linear Kompakt</i>, un'unità alla volta, quando la fate in classe. 🧱🇩🇪</p>
+  </header>
+
+  <div class="nota">🔊 In ogni lezione c'è il tasto <b>Ascolta</b>: le spiegazioni sono in italiano e le parole tedesche le dice una <b>voce tedesca</b>. Ripetile ad alta voce!</div>
+
+  <a class="step" href="schulalltag.html">
+    <div class="num c1">6</div>
+    <div class="info"><h2>Schulalltag: la vita a scuola</h2><p>Materie, orario, giorni, come vai a scuola</p></div>
+    <span class="badge">Vai →</span>
+  </a>
+
+  <footer>Fatto con cura per Irene 🌿 — un mattoncino alla volta</footer>
+</div>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js');
+  }
+</script>
+</body>
+</html>

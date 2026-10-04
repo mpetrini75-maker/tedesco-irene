@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#FAF6EE">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Tedesco di Irene">
+<script src="alert.js"></script>
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<title>Schulalltag: la vita a scuola — Allenamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF6EE; --card:#FFFFFF; --ink:#2F2A24;
+    --accent:#A8402E; --accent-soft:#F6E3DC;
+    --green:#3E8E5A; --green-soft:#E2F0E6;
+    --red:#C2492F; --red-soft:#F6E1DB;
+    --blue:#3B6EA5; --blue-soft:#E2ECF5;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:"Lexend","Trebuchet MS",Verdana,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.7; letter-spacing:0.3px; padding:24px 14px 60px;}
+  .wrap{max-width:620px;margin:0 auto;}
+  .back{display:inline-block;background:var(--accent-soft);color:var(--accent);text-decoration:none;border-radius:12px;padding:8px 16px;font-size:0.98rem;font-weight:bold;margin:0 8px 14px 0;}
+  h1{color:var(--accent);font-size:1.6rem;text-align:center;margin:0 0 6px;}
+  .sub{text-align:center;color:#8a7f70;margin:0 0 26px;font-size:1rem;}
+  .card{background:var(--card);border-radius:18px;padding:22px 20px;margin-bottom:22px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.06);border:1px solid #efe7da;}
+  .card h2{margin:0 0 10px;font-size:1.25rem;color:var(--accent);}
+  .card .lead{color:#8a7f70;margin:0 0 12px;font-size:0.97rem;}
+  .levelbar{margin:0 0 12px;}
+  .lvrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:0.98rem;color:var(--accent);}
+  .lvdots{display:inline-flex;gap:6px;}
+  .lvdot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:var(--bg);border:2px solid var(--accent-soft);color:#b9ad9c;font-size:0.85rem;font-weight:bold;}
+  .lvdot.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);}
+  .ex{margin:14px 0;}
+  .qnum{font-weight:bold;color:var(--accent);}
+  .qtext{font-size:1.1rem;margin:6px 0 8px;}
+  .options{display:flex;flex-direction:column;gap:10px;}
+  .opt{background:var(--bg);border:2px solid var(--accent-soft);
+    border-radius:12px;padding:13px 14px;font-size:1.05rem;cursor:pointer;
+    text-align:left;font-family:inherit;color:var(--ink);transition:all .15s;}
+  .opt:hover{border-color:var(--accent);}
+  .opt.correct{background:var(--green-soft);border-color:var(--green);color:var(--green);font-weight:bold;}
+  .opt.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);}
+  .feedback{margin-top:10px;font-size:1.02rem;font-weight:bold;min-height:24px;}
+  .feedback.ok{color:var(--green);}
+  .feedback.no{color:var(--red);}
+  .progress{text-align:center;font-size:1.05rem;margin:12px 0 0;color:#8a7f70;}
+  .star{font-size:1.4rem;}
+  .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;}
+  .match-col{display:flex;flex-direction:column;gap:10px;}
+  .match-btn{background:var(--bg);border:2px solid var(--accent-soft);border-radius:12px;
+    padding:12px;font-size:0.98rem;cursor:pointer;font-family:inherit;color:var(--ink);
+    display:flex;align-items:center;justify-content:center;text-align:center;gap:6px;transition:all .15s;}
+  .match-btn:hover{border-color:var(--accent);}
+  .match-btn.sel{border-color:var(--blue);background:var(--blue-soft);color:var(--blue);font-weight:bold;}
+  .match-btn.done{background:var(--green-soft);border-color:var(--green);color:var(--green);font-weight:bold;cursor:default;opacity:0.85;}
+  .match-btn.flash{border-color:var(--red);background:var(--red-soft);}
+  .restart{display:inline-block;margin:12px auto 0;background:var(--accent);color:#fff;border:none;
+    border-radius:12px;padding:11px 22px;font-size:1rem;cursor:pointer;font-family:inherit;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">&larr; Indice</a><a class="back" href="schulalltag.html">📖 Ripassa la lezione</a>
+  <h1>🏋️ Schulalltag: la vita a scuola — Allenamento</h1>
+  <p class="sub">Mattoncino 1 · 3 sezioni · 3 livelli ciascuna 💪</p>
+
+  <div class="card">
+    <h2>🧠 1. Domande</h2>
+    <p class="lead">Scegli la risposta giusta. Puoi riprovare finché non la trovi!</p>
+    <div class="levelbar" id="quiz-level"></div>
+    <div id="quiz-box"></div>
+    <div class="progress" id="quiz-prog"></div>
+  </div>
+
+  <div class="card">
+    <h2>✅ 2. Vero o falso</h2>
+    <p class="lead">Leggi la frase e tocca Vero o Falso. Dopo ti dico perché.</p>
+    <div class="levelbar" id="vf-level"></div>
+    <div id="vf-box"></div>
+    <div class="progress" id="vf-prog"></div>
+  </div>
+
+  <div class="card">
+    <h2>🔗 3. Abbina</h2>
+    <p class="lead">Tocca una casella a sinistra, poi la sua coppia a destra. Collega tutte le coppie!</p>
+    <div class="levelbar" id="abbina-level"></div>
+    <div class="match-grid" id="abbina-grid"></div>
+    <div class="progress" id="abbina-prog"></div>
+  </div>
+</div>
+<script>
+window.ALLENAMENTO = {"quiz": [[{"q": "Come si dice \"storia\" in tedesco?", "opts": ["Geschichte", "Geografie", "Kunst"]}, {"q": "Come si dice \"arte\"?", "opts": ["Kunst", "Musik", "Sport"]}, {"q": "Mathe è…", "opts": ["matematica", "musica", "inglese"]}, {"q": "Le materie in tedesco si usano…", "opts": ["senza articolo", "sempre con der", "sempre con die"]}, {"q": "Was ist dein Lieblingsfach? vuol dire…", "opts": ["Qual è la tua materia preferita?", "Che ore sono?", "Come vai a scuola?"]}], [{"q": "Mittwoch è…", "opts": ["mercoledì", "lunedì", "domenica"]}, {"q": "Lunedì si dice…", "opts": ["Montag", "Mittwoch", "Freitag"]}, {"q": "Lunedì ho tedesco:", "opts": ["Am Montag habe ich Deutsch.", "Im Montag habe ich Deutsch.", "Mit Montag habe ich Deutsch."]}, {"q": "Lo Stundenplan è…", "opts": ["l'orario delle lezioni", "la mensa", "il fine settimana"]}, {"q": "die Pause è…", "opts": ["l'intervallo", "la prima ora", "la palestra"]}], [{"q": "Vado in autobus:", "opts": ["Ich fahre mit dem Bus.", "Ich fahre mit der Bus.", "Ich fahre zu Bus."]}, {"q": "Vado in metro (die U-Bahn):", "opts": ["Ich fahre mit der U-Bahn.", "Ich fahre mit dem U-Bahn.", "Ich gehe zu U-Bahn."]}, {"q": "Vado a piedi:", "opts": ["Ich gehe zu Fuß.", "Ich fahre mit dem Fuß.", "Ich gehe mit Fuß."]}, {"q": "Dopo mit, das Fahrrad diventa…", "opts": ["mit dem Fahrrad", "mit der Fahrrad", "mit das Fahrrad"]}, {"q": "Es gibt vuol dire…", "opts": ["c'è, ci sono", "io vado", "mi piace"]}]], "vf": [[{"q": "Geschichte vuol dire storia.", "v": true, "perche": "E Geografie vuol dire geografia."}, {"q": "Kunst vuol dire musica.", "v": false, "perche": "Kunst è arte; musica è Musik."}, {"q": "Davanti alle materie si mette der.", "v": false, "perche": "Le materie si usano senza articolo."}, {"q": "Lieblingsfach vuol dire materia preferita.", "v": true, "perche": "Lieblings- vuol dire preferito."}, {"q": "Ich finde Mathe einfach vuol dire: trovo matematica facile.", "v": true, "perche": "einfach = facile."}], [{"q": "I giorni della settimana sono maschili.", "v": true, "perche": "Per questo si dice am Montag."}, {"q": "Sonntag è sabato.", "v": false, "perche": "Sonntag è domenica; sabato è Samstag."}, {"q": "Mittwoch viene da metà settimana.", "v": true, "perche": "Mitte + Woche."}, {"q": "die erste Stunde è la prima ora.", "v": true, "perche": "die zweite Stunde è la seconda."}, {"q": "das Wochenende è il lunedì.", "v": false, "perche": "È il fine settimana."}], [{"q": "Dopo mit si usa il dativo.", "v": true, "perche": "der e das diventano dem, die diventa der."}, {"q": "Si dice mit der Bus.", "v": false, "perche": "der Bus è maschile: mit dem Bus."}, {"q": "A piedi si dice zu Fuß.", "v": true, "perche": "E si usa gehen, non fahren."}, {"q": "Con un mezzo si usa fahren.", "v": true, "perche": "Ich fahre mit dem Zug."}, {"q": "Dopo es gibt, ein diventa einen al maschile.", "v": true, "perche": "Es gibt einen Computerraum."}]], "abbina": [[{"l": "Deutsch", "r": "tedesco"}, {"l": "Englisch", "r": "inglese"}, {"l": "Geschichte", "r": "storia"}, {"l": "Kunst", "r": "arte 🎨"}, {"l": "Mathe", "r": "matematica"}], [{"l": "Montag", "r": "lunedì"}, {"l": "Mittwoch", "r": "mercoledì"}, {"l": "Freitag", "r": "venerdì"}, {"l": "Sonntag", "r": "domenica"}, {"l": "Stundenplan", "r": "orario 🗓️"}], [{"l": "der Bus", "r": "mit dem Bus 🚌"}, {"l": "die U-Bahn", "r": "mit der U-Bahn 🚇"}, {"l": "das Fahrrad", "r": "mit dem Fahrrad 🚲"}, {"l": "a piedi", "r": "zu Fuß 🚶"}, {"l": "es gibt", "r": "c'è, ci sono"}]]};
+</script>
+<script src="allenamento.js"></script>
+<script>
+  if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./service-worker.js'); }
+</script>
+</body>
+</html>

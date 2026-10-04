@@ -1,0 +1,104 @@
+/* ===== Tedesco di Irene - foglio di stile condiviso (tema rosso mattone, copiato da Geografia) ===== */
+:root{
+  --bg:#FAF6EE;
+  --card:#FFFFFF;
+  --ink:#2F2A24;
+  --accent:#A8402E;       /* rosso mattone */
+  --accent-soft:#F6E3DC;
+  --green:#3E8E5A; --green-soft:#E2F0E6;
+  --red:#C2492F;   --red-soft:#F6E1DB;
+  --blue:#3B6EA5;  --blue-soft:#E2ECF5;
+  --giallo:#E0A82E; --giallo-soft:#FAF0D6;
+  --ombra:rgba(43,43,43,0.08);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:"Lexend","Trebuchet MS",Verdana,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  letter-spacing:0.3px;
+  padding:24px 14px 60px;
+}
+.wrap{max-width:640px;margin:0 auto;}
+
+.backbtn{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  text-decoration:none;border-radius:12px;padding:8px 16px;font-size:0.98rem;font-weight:bold;margin-bottom:14px;}
+
+h1{color:var(--accent);font-size:1.7rem;text-align:center;margin:0 0 6px;}
+.sub{text-align:center;color:#8a7f70;margin:0 0 26px;font-size:1rem;}
+
+.card{
+  background:var(--card);border-radius:18px;padding:22px 20px;
+  margin-bottom:22px;box-shadow:0 4px 14px var(--ombra);
+  border:1px solid #efe7da;
+}
+.card h2{margin:0 0 14px;font-size:1.25rem;color:var(--accent);}
+.card h3{margin:18px 0 8px;font-size:1.08rem;color:var(--accent);}
+.card p{margin:8px 0;}
+
+table{width:100%;border-collapse:collapse;margin:10px 0;}
+td,th{padding:10px;text-align:left;border-bottom:2px solid var(--accent-soft);font-size:1.02rem;vertical-align:top;}
+th{color:var(--accent);}
+td.c,th.c{text-align:center;}
+.hl{background:var(--accent-soft);border-radius:8px;font-weight:bold;color:var(--accent);}
+
+/* riquadri colorati */
+.tip{background:var(--accent-soft);border-radius:10px;padding:10px 14px;font-size:0.98rem;margin:12px 0;}
+.tip-green{background:var(--green-soft);border-radius:10px;padding:10px 14px;font-size:0.98rem;margin:12px 0;color:#2f6b45;}
+.warn{background:var(--red-soft);border-radius:10px;padding:10px 14px;font-size:0.98rem;margin:12px 0;color:#8f3320;}
+.parola{background:var(--giallo-soft);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:0.98rem;}
+
+/* frase chiave in evidenza */
+.formula{
+  background:var(--accent);color:#fff;border-radius:14px;text-align:center;
+  font-size:1.3rem;font-weight:bold;padding:16px;margin:14px 0;
+}
+
+pre{
+  background:#3a201b;color:#f6ebe7;border-radius:12px;padding:14px 16px;
+  overflow-x:auto;font-size:0.9rem;line-height:1.5;margin:12px 0;
+}
+
+ul,ol{margin:8px 0 8px 4px;padding-left:22px;}
+li{margin:4px 0;}
+
+/* esercizi + soluzioni a scomparsa */
+.solbtn{
+  display:inline-block;background:var(--accent);color:#fff;border:none;border-radius:12px;
+  padding:10px 20px;font-size:1rem;font-weight:bold;cursor:pointer;font-family:inherit;margin-top:6px;
+}
+.sol{display:none;margin-top:12px;}
+.sol.open{display:block;}
+
+/* callout allenamento */
+.allena{
+  background:var(--accent-soft);border-radius:16px;padding:18px 20px;text-align:center;margin:8px 0 22px;
+}
+.allena a{
+  display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+  border-radius:12px;padding:14px 22px;font-size:1.08rem;font-weight:bold;margin-top:8px;
+}
+
+/* immagini e cartine */
+.fig{margin:12px 0;text-align:center;}
+.fig img{width:100%;height:auto;border-radius:12px;box-shadow:0 4px 14px var(--ombra);background:#fff;}
+.fig figcaption{font-size:0.92rem;color:#8a7f70;margin-top:6px;}
+
+/* tasto "Ascolta" (lettura a voce di un riquadro) */
+.ascolta{float:right;margin:-4px 0 6px 10px;background:var(--accent-soft);color:var(--accent);border:none;
+  border-radius:99px;padding:6px 14px;font-size:0.95rem;font-weight:bold;cursor:pointer;font-family:inherit;}
+.ascolta.on{background:var(--accent);color:#fff;}
+
+/* linea del tempo */
+.tempo{border-left:4px solid var(--accent);margin:10px 0 10px 6px;padding-left:16px;}
+.tempo .tappa{margin:0 0 20px;}
+.tempo .quando{display:inline-block;background:var(--accent);color:#fff;border-radius:99px;padding:2px 12px;font-weight:bold;font-size:0.92rem;}
+.tempo img{width:100%;border-radius:10px;margin-top:8px;box-shadow:0 3px 10px var(--ombra);}
+
+footer{text-align:center;margin-top:30px;font-size:0.92rem;color:#9a9a9a;}
+footer a{color:var(--accent);}
+
+/* parole in tedesco: lette dalla voce tedesca (strumenti/genera-audio.py) */
+[lang="de"]{color:#7A2A1D;}

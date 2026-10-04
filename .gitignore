@@ -1,0 +1,11 @@
+# Configurazione locale di Claude Code (non va condivisa in git)
+.claude/
+
+# File di sistema
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Verifiche stampabili con soluzioni: SOLO LOCALE, non devono finire online
+verifiche/
+strumenti/anteprima-*.png
