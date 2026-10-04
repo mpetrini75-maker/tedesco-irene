@@ -1,4 +1,4 @@
-const CACHE = 'tedesco-irene-v1';
+const CACHE = 'tedesco-irene-v2';
 
 const ASSETS = [
   './',
@@ -54,7 +54,7 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // Pagine HTML: network-first → prende sempre l'ultima versione se online,
+  // Pagine HTML: network-first â†’ prende sempre l'ultima versione se online,
   // ricade sulla cache solo offline. Evita di servire codice vecchio.
   const isHTML = e.request.mode === "navigate" || url.pathname.endsWith(".html") || url.pathname.endsWith("/");
   if (url.origin === self.location.origin && isHTML) {

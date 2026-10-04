@@ -15,8 +15,9 @@ import edge_tts
 R = Path(__file__).resolve().parent.parent
 AUDIO = R / "audio"
 VOCI = {
-    # stessa voce e stesso passo scelti da Marco per Geografia il 03/10 ("ragazzina bella sveglia")
-    "it": ("it-IT-ElsaNeural", "+20%", "+15Hz"),
+    # stessa voce di Geografia ("ragazzina bella sveglia"), ma a velocita' normale:
+    # a +20% Marco l'ha trovata "troppo veloce" qui, accanto al tedesco lento (04/10/2026)
+    "it": ("it-IT-ElsaNeural", "+0%", "+15Hz"),
     # il tedesco un po' piu' lento del normale: e' una lingua che Irene sta imparando
     "de": ("de-DE-KatjaNeural", "-10%", "+0Hz"),
 }
