@@ -79,6 +79,8 @@ async def registra(segmenti, file):
             if c["type"] == "audio":
                 dati += c["data"]
         pezzi.append(dati)
+    if not all(pezzi):   # 10/10/2026: un pezzo senza audio non deve diventare un mp3 vuoto
+        raise RuntimeError(f"{file.name}: il servizio voci ha restituito un pezzo vuoto")
     # stesso formato (mp3 24 kHz mono) per tutte e due le voci: i pezzi si accodano
     file.write_bytes(b"".join(pezzi))
 

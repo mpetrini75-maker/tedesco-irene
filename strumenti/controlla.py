@@ -42,8 +42,13 @@ for slug in ("schulalltag",):
         if novoce:
             continue
         n_audio += 1
-        if not (R / "audio" / f"{slug}-{n}.mp3").exists():
+        f = R / "audio" / f"{slug}-{n}.mp3"
+        if not f.exists():
             errori.append(f"manca audio/{slug}-{n}.mp3 (rilancia strumenti/genera-audio.py)")
+        elif f.stat().st_size < 2000:
+            # 10/10/2026: un 403 del servizio voci aveva lasciato un mp3 da 0 byte e questo controllo
+            # lo dava per buono. Un riquadro registrato pesa sempre decine di KB.
+            errori.append(f"audio/{slug}-{n}.mp3 vuoto o rotto ({f.stat().st_size} byte): rilancia strumenti/genera-audio.py")
 
 print(f"audio attesi {n_audio} · ", end="")
 print(f"pagine {len(pagine)} · immagini {len(immagini)} · file nel service worker {len(in_sw)}")
