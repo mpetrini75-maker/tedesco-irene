@@ -1,4 +1,4 @@
-const CACHE = 'tedesco-irene-v2';
+const CACHE = 'tedesco-irene-v3';
 
 const ASSETS = [
   './',
@@ -9,6 +9,7 @@ const ASSETS = [
   './icon-192.png',
   './icon-512.png',
   './index.html',
+  './interrogazione.html',
   './manifest.json',
   './schulalltag.html',
   './schulalltag-allenamento.html',

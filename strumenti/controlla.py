@@ -35,7 +35,7 @@ for f in sorted(servono - in_sw):
 
 # ogni riquadro con titolo (tranne data-no-voce) delle lezioni deve avere la sua registrazione
 n_audio = 0
-for slug in ("schulalltag",):
+for slug in ("schulalltag", "interrogazione"):
     t = (R / f"{slug}.html").read_text(encoding="utf-8")
     cards = re.findall(r'<div class="card"( data-no-voce)?>\s*<h2>', t)
     for n, (novoce,) in enumerate([(c,) for c in cards]):

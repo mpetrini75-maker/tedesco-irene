@@ -21,7 +21,7 @@ VOCI = {
     # il tedesco un po' piu' lento del normale: e' una lingua che Irene sta imparando
     "de": ("de-DE-KatjaNeural", "-10%", "+0Hz"),
 }
-LEZIONI = ["schulalltag"]
+LEZIONI = ["schulalltag", "interrogazione"]
 EMOJI = re.compile("[\U0001F000-\U0001FAFF☀-➿⬀-⯿️‍]")
 
 
