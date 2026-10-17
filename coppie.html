@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tedesco - Allenamento in coppia</title>
+<link rel="manifest" href="manifest.json">
+<script src="alert.js"></script>
+<meta name="theme-color" content="#FAF6EE">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tedesco di Irene">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .nomi{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+  .nomi label{flex:1;min-width:140px;font-size:.95rem;color:#666;}
+  .nomi input{width:100%;font:inherit;font-size:1.1rem;padding:8px 12px;border:2px solid #E8D5CC;border-radius:12px;background:#fff;}
+  .temi{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
+  .temi button{font:inherit;font-size:1rem;padding:8px 14px;border-radius:99px;border:2px solid #E8D5CC;background:#fff;cursor:pointer;}
+  .temi button.on{background:#A8402E;color:#fff;border-color:#A8402E;}
+  .ruoli{display:flex;gap:10px;margin-bottom:14px;}
+  .ruolo{flex:1;border-radius:14px;padding:10px 12px;text-align:center;font-weight:600;font-size:1.05rem;}
+  .chiede{background:#A8402E;color:#fff;}
+  .risponde{background:#F6E3DC;color:#7A2A1D;}
+  .consegna{font-size:1.15rem;color:#555;margin-bottom:6px;}
+  .domanda{font-size:1.6rem;font-weight:600;color:#A8402E;line-height:1.35;margin:4px 0 12px;}
+  .risposta{display:none;background:#EAF4EA;border-radius:14px;padding:14px 16px;margin-top:12px;}
+  .risposta.open{display:block;}
+  .risposta .de{font-size:1.35rem;font-weight:600;color:#2E6B30;}
+  .risposta .it{color:#555;margin-top:4px;}
+  .tasti{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  .tasti button{font:inherit;font-size:1.05rem;padding:12px 18px;border-radius:14px;border:0;cursor:pointer;}
+  .b-voce{background:#F6E3DC;color:#7A2A1D;}
+  .b-vedi{background:#2E6B30;color:#fff;}
+  .b-avanti{background:#A8402E;color:#fff;margin-left:auto;}
+  .conta{font-size:.95rem;color:#8a7f70;text-align:right;}
+  .fine{display:none;text-align:center;font-size:1.3rem;}
+  .fine.open{display:block;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backbtn" href="index.html">← Indice</a>
+  <h1>👭 Allenamento in coppia</h1>
+  <p class="sub">All'interrogazione ve le fate tra compagne: una chiede, l'altra risponde</p>
+
+  <div class="card" data-no-voce>
+    <p>📌 <b>Come si gioca:</b> chi <b>chiede</b> legge (o ascolta 🔊) la domanda e la fa <b>ad alta voce</b> in tedesco. Chi <b>risponde</b> risponde a voce. Poi toccate <b>👀 Risposta</b> per controllare, e <b>➡️ Avanti</b>: <b>vi scambiate</b> da sole.</p>
+    <p>Potete usare un tablet solo, passandovelo, oppure ognuna col suo telefono: la pagina è la stessa.</p>
+    <div class="nomi">
+      <label>Prima giocatrice<input id="nomeA" value="Irene" maxlength="20"></label>
+      <label>Seconda giocatrice<input id="nomeB" value="Compagna" maxlength="20"></label>
+    </div>
+    <div class="temi" id="temi">
+      <button data-t="tutto" class="on">Tutto</button>
+      <button data-t="scuola">🏫 La scuola</button>
+      <button data-t="orario">🗓️ L'orario</button>
+      <button data-t="cose">🎒 Le cose</button>
+    </div>
+  </div>
+
+  <div class="card" id="gioco" data-no-voce>
+    <div class="conta" id="conta"></div>
+    <div class="ruoli">
+      <div class="ruolo chiede" id="chiede"></div>
+      <div class="ruolo risponde" id="risponde"></div>
+    </div>
+    <div class="consegna" id="consegna"></div>
+    <div class="domanda" lang="de" id="domanda"></div>
+    <div class="risposta" id="risposta">
+      <div class="de" lang="de" id="rde"></div>
+      <div class="it" id="rit"></div>
+    </div>
+    <div class="tasti">
+      <button class="b-voce" id="vd" type="button">🔊 Domanda</button>
+      <button class="b-vedi" id="vedi" type="button">👀 Risposta</button>
+      <button class="b-voce" id="vr" type="button" style="display:none">🔊 Risposta</button>
+      <button class="b-avanti" id="avanti" type="button">➡️ Avanti</button>
+    </div>
+  </div>
+
+  <div class="card fine" id="fine" data-no-voce>
+    🎉 <span lang="de">Super!</span> Avete fatto tutte le domande, a turno.<br>
+    <button class="solbtn" id="ancora" type="button">🔁 Ancora, in un altro ordine</button>
+  </div>
+
+  <div class="allena">
+    📚 Le frasi con le spiegazioni:<br>
+    <a href="interrogazione.html">🎤 Pronta per l'interrogazione</a>
+  </div>
+  <footer>🔗 <a href="index.html">Indice</a></footer>
+</div>
+<script>
+(function(){
+  var dati = [], giro = [], i = 0, turno = 0, tema = "tutto";
+  var $ = function(id){ return document.getElementById(id); };
+  var player = new Audio();
+  function suona(f){ player.pause(); player.src = "audio/" + f; player.play().catch(function(){}); }
+  function salva(){ try{ localStorage.setItem("coppie-nomi", JSON.stringify([$("nomeA").value, $("nomeB").value])); }catch(e){} }
+  try{ var n = JSON.parse(localStorage.getItem("coppie-nomi") || "null"); if(n){ $("nomeA").value = n[0]; $("nomeB").value = n[1]; } }catch(e){}
+  function nome(k){ var v = $(k).value.trim(); return v || (k === "nomeA" ? "Prima" : "Seconda"); }
+
+  function mescola(){
+    giro = dati.map(function(q, n){ return n; }).filter(function(n){ return tema === "tutto" || dati[n].tema === tema; });
+    for(var k = giro.length - 1; k > 0; k--){ var j = Math.floor(Math.random() * (k + 1)); var t = giro[k]; giro[k] = giro[j]; giro[j] = t; }
+    i = 0;
+    $("fine").classList.remove("open"); $("gioco").style.display = "";
+    mostra();
+  }
+  function mostra(){
+    var n = giro[i], q = dati[n];
+    var a = turno % 2 === 0 ? nome("nomeA") : nome("nomeB");
+    var b = turno % 2 === 0 ? nome("nomeB") : nome("nomeA");
+    $("chiede").textContent = "🗣️ Chiede: " + a;
+    $("risponde").textContent = "👂 Risponde: " + b;
+    $("consegna").textContent = q.it + ":";
+    $("domanda").textContent = q.d;
+    $("rde").textContent = q.r;
+    $("rit").textContent = q.rit;
+    $("risposta").classList.remove("open");
+    $("vr").style.display = "none";
+    $("conta").textContent = (i + 1) + " / " + giro.length;
+  }
+  $("vd").onclick = function(){ suona("coppia-d" + giro[i] + ".mp3"); };
+  $("vr").onclick = function(){ suona("coppia-r" + giro[i] + ".mp3"); };
+  $("vedi").onclick = function(){ $("risposta").classList.add("open"); $("vr").style.display = ""; suona("coppia-r" + giro[i] + ".mp3"); };
+  $("avanti").onclick = function(){
+    player.pause(); turno++; i++;
+    if(i >= giro.length){ $("gioco").style.display = "none"; $("fine").classList.add("open"); return; }
+    mostra();
+  };
+  $("ancora").onclick = mescola;
+  $("nomeA").oninput = $("nomeB").oninput = function(){ salva(); mostra(); };
+  document.querySelectorAll("#temi button").forEach(function(btn){
+    btn.onclick = function(){
+      document.querySelectorAll("#temi button").forEach(function(x){ x.classList.remove("on"); });
+      btn.classList.add("on"); tema = btn.getAttribute("data-t"); mescola();
+    };
+  });
+  fetch("coppie.json").then(function(r){ return r.json(); }).then(function(d){ dati = d; mescola(); });
+  window.addEventListener("pagehide", function(){ player.pause(); });
+})();
+</script>
+<script>
+  if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./service-worker.js'); }
+</script>
+</body>
+</html>

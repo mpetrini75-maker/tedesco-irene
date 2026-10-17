@@ -50,6 +50,15 @@ for slug in ("schulalltag", "interrogazione"):
             # lo dava per buono. Un riquadro registrato pesa sempre decine di KB.
             errori.append(f"audio/{slug}-{n}.mp3 vuoto o rotto ({f.stat().st_size} byte): rilancia strumenti/genera-audio.py")
 
+# 17/10/2026: l'allenamento in coppia ha due registrazioni per domanda (genera-coppie.py)
+import json
+for n in range(len(json.loads((R / "coppie.json").read_text(encoding="utf-8")))):
+    for k in ("d", "r"):
+        f = R / "audio" / f"coppia-{k}{n}.mp3"
+        if not f.exists() or f.stat().st_size < 2000:
+            errori.append(f"manca o e' vuoto audio/coppia-{k}{n}.mp3 (rilancia strumenti/genera-coppie.py)")
+        n_audio += 1
+
 print(f"audio attesi {n_audio} · ", end="")
 print(f"pagine {len(pagine)} · immagini {len(immagini)} · file nel service worker {len(in_sw)}")
 for e in errori:

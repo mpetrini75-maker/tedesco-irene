@@ -1,10 +1,12 @@
-const CACHE = 'tedesco-irene-v3';
+const CACHE = 'tedesco-irene-v4';
 
 const ASSETS = [
   './',
   './alert.js',
   './allenamento.js',
   './app.js',
+  './coppie.html',
+  './coppie.json',
   './icon-180.png',
   './icon-192.png',
   './icon-512.png',

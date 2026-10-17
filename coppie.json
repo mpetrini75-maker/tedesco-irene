@@ -1,0 +1,18 @@
+[
+  {"tema": "scuola", "it": "Chiedi come si chiama la sua scuola", "d": "Wie heißt deine Schule?", "r": "Meine Schule heißt Zenale e Butinone.", "rit": "La mia scuola si chiama Zenale e Butinone."},
+  {"tema": "scuola", "it": "Chiedi dov'è la sua scuola", "d": "Wo ist deine Schule?", "r": "Meine Schule ist in Treviglio.", "rit": "La mia scuola è a Treviglio."},
+  {"tema": "scuola", "it": "Chiedi in che classe è", "d": "In welcher Klasse bist du?", "r": "Ich bin in der Klasse zwei B.", "rit": "Sono in seconda B."},
+  {"tema": "scuola", "it": "Chiedi che cosa c'è nella sua scuola", "d": "Was gibt es in deiner Schule?", "r": "In meiner Schule gibt es viele Klassenzimmer und einen Computerraum.", "rit": "Nella mia scuola ci sono tante aule e un'aula computer."},
+  {"tema": "scuola", "it": "Chiedi come va a scuola", "d": "Wie kommst du zur Schule?", "r": "Ich fahre mit dem Bus.", "rit": "Vado con l'autobus. (Di' il tuo: mit dem Zug, mit dem Auto, zu Fuß…)"},
+  {"tema": "orario", "it": "Chiedi quando ha tedesco", "d": "Wann hast du Deutsch?", "r": "Am Montag, am Donnerstag und am Freitag.", "rit": "Il lunedì, il giovedì e il venerdì."},
+  {"tema": "orario", "it": "Chiedi che cosa ha lunedì alla prima ora", "d": "Was hast du am Montag in der ersten Stunde?", "r": "Am Montag in der ersten Stunde habe ich Geografie.", "rit": "Lunedì alla prima ora ho geografia."},
+  {"tema": "orario", "it": "Chiedi che cosa ha mercoledì alla prima ora", "d": "Was hast du am Mittwoch in der ersten Stunde?", "r": "Am Mittwoch in der ersten Stunde habe ich Sport.", "rit": "Mercoledì alla prima ora ho educazione fisica."},
+  {"tema": "orario", "it": "Chiedi che cosa ha venerdì alla seconda ora", "d": "Was hast du am Freitag in der zweiten Stunde?", "r": "Am Freitag in der zweiten Stunde habe ich Informatik.", "rit": "Venerdì alla seconda ora ho informatica."},
+  {"tema": "orario", "it": "Chiedi quante ore ha il martedì", "d": "Wie viele Stunden hast du am Dienstag?", "r": "Am Dienstag habe ich sieben Stunden.", "rit": "Il martedì ho sette ore."},
+  {"tema": "orario", "it": "Chiedi quando ha matematica", "d": "Wann hast du Mathe?", "r": "Am Montag, am Dienstag, am Mittwoch und am Donnerstag.", "rit": "Il lunedì, il martedì, il mercoledì e il giovedì."},
+  {"tema": "orario", "it": "Chiedi qual è la sua materia preferita", "d": "Was ist dein Lieblingsfach?", "r": "Mein Lieblingsfach ist Englisch.", "rit": "La mia materia preferita è inglese. (Di' la tua!)"},
+  {"tema": "orario", "it": "Chiedi come trova matematica", "d": "Wie findest du Mathe?", "r": "Ich finde Mathe interessant.", "rit": "Trovo matematica interessante. (Oppure: einfach, schwierig, langweilig)"},
+  {"tema": "cose", "it": "Chiedi di cosa ha bisogno per matematica", "d": "Was brauchst du für Mathe?", "r": "Ich brauche einen Taschenrechner und ein Heft.", "rit": "Ho bisogno di una calcolatrice e di un quaderno."},
+  {"tema": "cose", "it": "Chiedi di cosa ha bisogno per tedesco", "d": "Was brauchst du für Deutsch?", "r": "Ich brauche ein Buch und einen Kuli.", "rit": "Ho bisogno di un libro e di una penna."},
+  {"tema": "cose", "it": "Chiedi di cosa ha bisogno oggi", "d": "Was brauchst du heute?", "r": "Heute brauche ich ein Lineal und einen Bleistift.", "rit": "Oggi ho bisogno di un righello e di una matita."}
+]

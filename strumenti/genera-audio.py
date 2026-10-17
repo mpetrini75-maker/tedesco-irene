@@ -110,7 +110,8 @@ async def main():
             n_de = sum(1 for l, _ in seg if l == "de")
             print(f"  {nome}: {len(seg)} pezzi ({n_de} in tedesco)")
     for f in AUDIO.glob("*.mp3"):
-        if f.name not in nuovo:
+        # 17/10/2026: gli audio dell'allenamento in coppia sono di genera-coppie.py, non si toccano
+        if f.name not in nuovo and not f.name.startswith("coppia-"):
             f.unlink()
             print("  tolto", f.name)
     indice_f.write_text(json.dumps(nuovo, indent=1), encoding="utf-8")
